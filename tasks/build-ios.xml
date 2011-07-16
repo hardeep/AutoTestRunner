@@ -1,0 +1,27 @@
+<project name="qunit-ios">
+
+<!-- #DEFINES -->
+
+    <!-- iphone project specific defines -->
+    <property name="iphone-dir" value="${basedir}/iphone"/>
+    <property name="iphone-project" value="iphone.xcodeproj" />
+    <property name="iphone-build-path" value="${iphone-dir}/tmp" />
+
+    <!-- iphone simulator directory -->
+    <property name="iphone-simulator" value="/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app/Contents/MacOS/iPhone Simulator" />
+
+    <target name="build-ios">
+        <exec executable="xcodebuild" dir="${basedir}" failonerror="true">
+            <arg value="-project"/>
+            <arg value="${iphone-dir}/${iphone-project}"/>
+            <arg value="-configuration" />
+            <arg value="Debug"/>
+            <arg value="-target"/>
+            <arg value="iphone"/>
+            <arg value="-sdk"/>
+            <arg value="iphonesimulator4.2"/>
+            <arg value="CONFIGURATION_BUILD_DIR=${iphone-build-path}"/>
+        </exec>
+    </target>
+
+</project>
