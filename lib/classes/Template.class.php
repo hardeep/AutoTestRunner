@@ -8,7 +8,7 @@ class Template {
         $this->callStack = array();
     }
 
-    function loadTemplateFile($filename) {
+    function load_template_file($filename) {
         if (file_exists($filename) && is_readable($filename)) {
             $page = "";
             $fileHandle = fopen($filename, "r");
@@ -69,7 +69,14 @@ class Template {
                 $replace = $this->vars[$matches[0][$x][0]]["value"];
 
                 for ($y = 1; $y < count($matches[0][$x]); $y++) {
-                    $replace = $replace[$matches[0][$x][$y]];
+                    if (isset($replace[$matches[0][$x][$y]]))
+                    {
+                      $replace = $replace[$matches[0][$x][$y]];
+                    }
+                    else
+                    {
+                      $replace = "";
+                    }
                 }
 
                 $section = str_replace($original[0][$x], $replace, $section);
@@ -88,10 +95,42 @@ class Template {
 
         foreach ($location as $key => $value) {
             //echo $value;
-            $base = $base[$value];
+            if (isset($base[$value]))
+            {
+              $base = $base[$value];
+            } 
+            else
+            {
+              $base = "";
+              break;
+            }
         }
 
         return $base;
+    }
+
+    private function process_if_not_var(&$section) {
+
+        $ifvar = explode('.', $section);
+        $base = $this->vars[$ifvar[0]]["value"];
+
+        array_shift($ifvar);
+
+        foreach ($ifvar as $key => $value) {
+            if (isset($base[$value]))
+            {
+              $base = $base[$value];
+            } 
+            else
+            {
+              $base = "";
+              break;
+            }
+        }
+
+        if ($base === false)
+            return true;
+        return false;
     }
 
     private function process_if_var(&$section) {
@@ -102,10 +141,18 @@ class Template {
         array_shift($ifvar);
 
         foreach ($ifvar as $key => $value) {
-            $base = $base[$value];
+            if (isset($base[$value]))
+            {
+              $base = $base[$value];
+            } 
+            else
+            {
+              $base = "";
+              break;
+            }
         }
 
-        if ($base == "true")
+        if ($base === true)
             return true;
         return false;
     }
@@ -143,9 +190,12 @@ class Template {
 
                     $set = $this->process_foreach_vars($foreach);
 
-                    foreach ($set as $key => $tempValue) {
+                    if (is_array($set))
+                    {
+                      foreach ($set as $key => $tempValue) {
                         $this->vars[$foreach[1]] = array("value" => &$tempValue, "stackCursor" => $codeblock["level"]);
                         $this->parse_callstack($stackPos + 1, $endOfBlock - 1);
+                      }
                     }
                     return $this->parse_callstack($endOfBlock + 1, $targetPos);
                 } else if (preg_match("/\{\%[ \t\r\n]*template[ \t\r\n]*([a-zA-Z0-9_]+[\.[a-zA-Z0-9_]+]*)[ \t\r\n]*\%\}/", $codeblock["section"], $templateName)) {
@@ -160,6 +210,18 @@ class Template {
                         $template->render();
                         return $this->parse_callstack($stackPos + 1, $targetPos);
                     }
+                } else if (preg_match("/\{\%[ \t\r\n]*!if[ \t\r\n]*([a-zA-Z0-9_]+[\.[a-zA-Z0-9_]+]*)[ \t\r\n]*\%\}/", $codeblock["section"], $condition)) {
+                    array_shift($condition);
+                    $variableToEval = $condition[0];
+                    $endOfBlock = $stackPos + 1; // enter the loop
+                    while ($endOfBlock < sizeof($this->callStack) && $this->callStack[$endOfBlock]["level"] != $codeblock["level"]) {
+                        $endOfBlock++;
+                    }
+
+                    if ($this->process_if_not_var($variableToEval)) {
+                        $this->parse_callstack($stackPos + 1, $endOfBlock - 1);
+                    }
+                    return $this->parse_callstack($endOfBlock + 1, $targetPos);
                 } else if (preg_match("/\{\%[ \t\r\n]*if[ \t\r\n]*([a-zA-Z0-9_]+[\.[a-zA-Z0-9_]+]*)[ \t\r\n]*\%\}/", $codeblock["section"], $condition)) {
                     array_shift($condition);
                     $variableToEval = $condition[0];

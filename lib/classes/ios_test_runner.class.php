@@ -21,8 +21,6 @@
   THE SOFTWARE.
  */
 
-include "TestRunner.class.php";
-
 /*
  * @class IOSTestRunner
  * @brief Provides a class for running automated tests for IOS applications

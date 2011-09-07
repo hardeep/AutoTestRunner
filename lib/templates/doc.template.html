@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
+    <div class="header">
+      <span style="padding: 0px 0px 0px 10px;">
+        Class::{{ class_name }}
+      </span>
+    </div>
+    <div> 
+      <div class="legend">
+        <div class="section_title">
+          Sections 
+        </div>
+        <div class="menu">
+          <ul>
+          {% if has_methods_public %}
+            <li><a href="#public_methods">Public Methods</a></li>
+          {% endif %}
+          {% if has_methods_private %}
+            <li><a href="#private_methods">Private Methods</a></li>
+          {% endif %}
+          {% if has_methods_protected %}
+            <li><a href="#protected_methods">Protected Methods</a></li>
+          {% endif %}
+          {% if has_methods_static %}
+            <li><a href="#static_methods">Static Methods</a></li>
+          {% endif %}
+          {% if has_methods_not_implemented %}
+            <li><a href="#methods_not_implemented">Methods Not Implemented</a></li>
+          {% endif %}
+          <li><a href="#definitions">Definitions</a></li>
+          <ul>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+      <div class="document">
+        {% if has_methods_public %}
+        <div class="section_title">
+          <a name="public_methods">Public Methods</a>
+        </div>
+        <div class="section_document">
+          {% foreach method in methods_public %}
+          <a href="#{{method}}">{{method}}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if has_methods_private %}
+        <div class="section_title">
+          <a name="private_methods">Private Methods</a>
+        </div>
+        <div class="section_document">
+          {% foreach method in methods_private %}
+          <a href="#{{method}}">{{method}}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if has_methods_protected %}
+        <div class="section_title">
+          <a name="protected_methods">Protected Methods</a>
+        </div>
+        <div class="section_document">
+          {% foreach method in methods_protected %}
+          <a href="#{{method}}">{{method}}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if has_methods_static %}
+        <div class="section_title">
+          <a href="static_methods">Static Methods</a>
+        </div>
+        <div class="section_document">
+          {% foreach method in methods_static %}
+          <a href="#{{method}}">{{method}}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <div class="section_title">
+          <a name="methods_not_implemented">Methods Not Implemented</a>
+        </div>
+        <div class="section_document">
+          {% foreach method in methods_not_implemented %}
+          <a href="#{{method}}">{{method}}</a>
+          {% endfor %}
+        </div>
+        <div class="section_title">
+          <a name="definitions">Definitions</a>
+        </div>
+        <div class="section_document">
+        {% foreach method in methods_list %}
+          <div>
+            <div class="method">
+            <a name="{{method.name}}" >
+                <span class="{% !if method.implemented %} method_not_implemented {% endif %}">
+                  {{method.name}}
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class="">{{method.brief}}</div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                {% foreach param in method.params %}
+                  {{ param.name }} {% if param.not_required %} (optional) {% endif %} 
+                  - {{ param.description }} <br>
+                {% endfor %}
+              </div>
+              <div class="codeblock">
+                <div class="code">{{method.example}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
