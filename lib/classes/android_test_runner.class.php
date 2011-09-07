@@ -38,8 +38,6 @@
  * $androidTest->run("/Users/hardeep/Downloads/PhoneGap_GettingStarted-debug.apk");
  */
 
-include "TestRunner.class.php";
-
 class AndroidTestRunner extends TestRunner {
 
     /*

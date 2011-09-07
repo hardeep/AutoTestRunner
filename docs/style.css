@@ -1,0 +1,142 @@
+body 
+{
+  margin: 0px;
+  padding: 0px;
+  font-family: verdana;
+  font-size: 12px;
+}
+
+.hr
+{
+  margin: 20px 0px 20px 0px;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.legend
+{
+  width: 100%;
+  float: left;
+}
+
+.menu
+{
+  border-width: 2px;
+  border-style: solid;
+  border-color: #E9E9E9;
+  background-color: #EEEEEC; 
+}
+
+.document
+{
+  width: 100%;
+  float: left;
+}
+
+@media all and (min-width:1000px)
+{
+  .legend
+  {
+    width: 15%;
+    float: left;
+    margin: 10px;
+  }
+
+  .menu
+  {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #E9E9E9;
+    background-color: #EEEEEC; 
+  }
+
+  .document
+  {
+    width: 80%;
+    margin: 10px;
+    float: left;
+  }
+}
+
+ul
+{
+  list-style-type: none;
+  padding: 0px;
+  margin: 10px;
+}
+
+li
+{
+  padding: 0px;
+  margin: 10px 10px 10px 10px;
+}
+
+
+.codeblock
+{
+  background-color: #EEEEEC; 
+  border-width: 2px;
+  border-style: solid;
+  border-color: #E9E9E9;
+  margin: 10px 0px 10px 0px;
+}
+
+.code
+{
+  margin: 10px;
+}
+
+.method 
+{
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.method_not_implemented
+{
+  text-decoration: line-through;
+}
+
+.magenta
+{
+  color: #4A8BF5;
+}
+
+.variable
+{
+  color: #DD5000;
+}
+
+.section_title
+{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px 10px 10px 10px;
+}
+
+.subsection_title
+{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.section_document
+{
+  margin: 20px 0px 20px 30px;
+}
+
+.subsection_document
+{
+  margin: 5px 0px 5px 10px;
+}
+
+.header
+{
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  font-size: 1.66em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+}

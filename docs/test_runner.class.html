@@ -1,0 +1,808 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
+    <div class="header">
+      <span style="padding: 0px 0px 0px 10px;">
+        Class::TestRunner
+      </span>
+    </div>
+    <div> 
+      <div class="legend">
+        <div class="section_title">
+          Sections 
+        </div>
+        <div class="menu">
+          <ul>
+          
+            <li><a href="#public_methods">Public Methods</a></li>
+          
+          
+            <li><a href="#private_methods">Private Methods</a></li>
+          
+          
+            <li><a href="#protected_methods">Protected Methods</a></li>
+          
+          
+          
+          <li><a href="#definitions">Definitions</a></li>
+          <ul>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+      <div class="document">
+        
+        <div class="section_title">
+          <a name="public_methods">Public Methods</a>
+        </div>
+        <div class="section_document">
+          
+          <a href="#__construct">__construct</a>
+          
+          <a href="#setTimeForChildShutdown">setTimeForChildShutdown</a>
+          
+          <a href="#setTempFolder">setTempFolder</a>
+          
+          <a href="#setTimeToLive">setTimeToLive</a>
+          
+          <a href="#setLauncher">setLauncher</a>
+          
+          <a href="#setServerPort">setServerPort</a>
+          
+          <a href="#setHostToRunOn">setHostToRunOn</a>
+          
+          <a href="#setAdditionalArguments">setAdditionalArguments</a>
+          
+          <a href="#setJUnitOutputFilename">setJUnitOutputFilename</a>
+          
+          <a href="#setOutputJsFilename">setOutputJsFilename</a>
+          
+          <a href="#setMaxReportsToWaitFor">setMaxReportsToWaitFor</a>
+          
+          <a href="#setServerOnly">setServerOnly</a>
+          
+          <a href="#serverStartUp">serverStartUp</a>
+          
+          <a href="#serverTearDown">serverTearDown</a>
+          
+          <a href="#startServer">startServer</a>
+          
+          <a href="#shutdown">shutdown</a>
+          
+          <a href="#console">console</a>
+          
+          <a href="#writeToFile">writeToFile</a>
+          
+          <a href="#__toString">__toString</a>
+          
+        </div>
+        
+        
+        <div class="section_title">
+          <a name="private_methods">Private Methods</a>
+        </div>
+        <div class="section_document">
+          
+          <a href="#signal_handler">signal_handler</a>
+          
+        </div>
+        
+        
+        <div class="section_title">
+          <a name="protected_methods">Protected Methods</a>
+        </div>
+        <div class="section_document">
+          
+          <a href="#startUp">startUp</a>
+          
+          <a href="#tearDown">tearDown</a>
+          
+          <a href="#failedTestTeardown">failedTestTeardown</a>
+          
+          <a href="#run">run</a>
+          
+          <a href="#startTest">startTest</a>
+          
+          <a href="#__removeFile">__removeFile</a>
+          
+          <a href="#outputResults">outputResults</a>
+          
+          <a href="#outputAsJUnitXML">outputAsJUnitXML</a>
+          
+        </div>
+        
+        
+        <div class="section_title">
+          <a name="methods_not_implemented">Methods Not Implemented</a>
+        </div>
+        <div class="section_document">
+          
+        </div>
+        <div class="section_title">
+          <a name="definitions">Definitions</a>
+        </div>
+        <div class="section_document">
+        
+          <div>
+            <div class="method">
+            <a name="__construct" >
+                <span class="">
+                  __construct
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setTimeForChildShutdown" >
+                <span class="">
+                  setTimeForChildShutdown
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  seconds  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setTempFolder" >
+                <span class="">
+                  setTempFolder
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  folder  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setTimeToLive" >
+                <span class="">
+                  setTimeToLive
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  time  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setLauncher" >
+                <span class="">
+                  setLauncher
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  launcherPath  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setServerPort" >
+                <span class="">
+                  setServerPort
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  port  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setHostToRunOn" >
+                <span class="">
+                  setHostToRunOn
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  host  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setAdditionalArguments" >
+                <span class="">
+                  setAdditionalArguments
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  args  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setJUnitOutputFilename" >
+                <span class="">
+                  setJUnitOutputFilename
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  filename  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setOutputJsFilename" >
+                <span class="">
+                  setOutputJsFilename
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  filename  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setMaxReportsToWaitFor" >
+                <span class="">
+                  setMaxReportsToWaitFor
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  numOfReports  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="setServerOnly" >
+                <span class="">
+                  setServerOnly
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  bool  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="signal_handler" >
+                <span class="">
+                  signal_handler
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  signal  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="startUp" >
+                <span class="">
+                  startUp
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="tearDown" >
+                <span class="">
+                  tearDown
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="failedTestTeardown" >
+                <span class="">
+                  failedTestTeardown
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="run" >
+                <span class="">
+                  run
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="startTest" >
+                <span class="">
+                  startTest
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="serverStartUp" >
+                <span class="">
+                  serverStartUp
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="serverTearDown" >
+                <span class="">
+                  serverTearDown
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="startServer" >
+                <span class="">
+                  startServer
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="shutdown" >
+                <span class="">
+                  shutdown
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  pid  (optional)  
+                  - none <br>
+                
+                  status  (optional)  
+                  - none <br>
+                
+                  openSockets  (optional)  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="__removeFile" >
+                <span class="">
+                  __removeFile
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  file  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="console" >
+                <span class="">
+                  console
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  info  (optional)  
+                  - none <br>
+                
+                  label  (optional)  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="outputResults" >
+                <span class="">
+                  outputResults
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="outputAsJUnitXML" >
+                <span class="">
+                  outputAsJUnitXML
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="writeToFile" >
+                <span class="">
+                  writeToFile
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+                  filename  
+                  - none <br>
+                
+                  string  
+                  - none <br>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+          <div>
+            <div class="method">
+            <a name="__toString" >
+                <span class="">
+                  __toString
+                </span>
+              </a>
+            </div>
+            <div class="subsection_document">
+              <div class="subsection_title">Brief</div>
+              <div class=""></div>
+              <div class="subsection_title">Parameters</div>
+              <div>
+                
+              </div>
+              <div class="codeblock">
+                <div class="code"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
